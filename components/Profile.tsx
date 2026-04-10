@@ -116,6 +116,23 @@ export default function Profile({ member }: Props) {
                 })}
               </div>
             )}
+
+            {member.skillGroups && member.skillGroups.length > 0 && (
+              <section className="mt-12">
+                <h2 className="text-xs uppercase tracking-widest font-bold text-white/40 mb-4">Skills</h2>
+                <div className="grid gap-4">
+                  {member.skillGroups.map((group) => (
+                    <article
+                      key={group.label}
+                      className="rounded-2xl border border-outline-variant/20 bg-surface-container-low p-5"
+                    >
+                      <h3 className="text-sm uppercase tracking-[0.2em] text-primary">{group.label}</h3>
+                      <p className="mt-3 text-on-surface-variant leading-relaxed">{group.items.join(", ")}</p>
+                    </article>
+                  ))}
+                </div>
+              </section>
+            )}
           </div>
 
           <div className="md:col-span-7">
@@ -173,36 +190,6 @@ export default function Profile({ member }: Props) {
                   </section>
                 )}
 
-                <section>
-                  <h2 className="text-xs uppercase tracking-widest font-bold text-white/40 mb-4">Specialties</h2>
-                  <div className="flex flex-wrap gap-3">
-                    {member.specialties.map((spec) => (
-                      <span
-                        key={spec}
-                        className="px-4 py-2 rounded-full bg-surface-container-high border border-outline-variant/30 text-white text-sm font-headline"
-                      >
-                        {spec}
-                      </span>
-                    ))}
-                  </div>
-                </section>
-
-                {member.skillGroups && member.skillGroups.length > 0 && (
-                  <section>
-                    <h2 className="text-xs uppercase tracking-widest font-bold text-white/40 mb-4">Skills</h2>
-                    <div className="grid gap-4 md:grid-cols-2">
-                      {member.skillGroups.map((group) => (
-                        <article
-                          key={group.label}
-                          className="rounded-2xl border border-outline-variant/20 bg-surface-container-low p-5"
-                        >
-                          <h3 className="text-sm uppercase tracking-[0.2em] text-primary">{group.label}</h3>
-                          <p className="mt-3 text-on-surface-variant leading-relaxed">{group.items.join(", ")}</p>
-                        </article>
-                      ))}
-                    </div>
-                  </section>
-                )}
               </div>
             </motion.div>
           </div>
