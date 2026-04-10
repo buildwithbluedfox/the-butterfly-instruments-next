@@ -1,6 +1,6 @@
 import path from 'path';
 import { buildConfig } from 'payload';
-import { sqliteAdapter } from '@payloadcms/db-sqlite';
+import { postgresAdapter } from '@payloadcms/db-postgres';
 import { lexicalEditor } from '@payloadcms/richtext-lexical';
 import sharp from 'sharp';
 
@@ -41,9 +41,9 @@ export default buildConfig({
 		TestimonialsSection,
 	],
 	secret: process.env.PAYLOAD_SECRET || 'CHANGE_ME_IN_PRODUCTION',
-	db: sqliteAdapter({
-		client: {
-			url: process.env.DATABASE_URI || 'file:./data/payload.db',
+	db: postgresAdapter({
+		pool: {
+			connectionString: process.env.DATABASE_URI || '',
 		},
 	}),
 	sharp,
