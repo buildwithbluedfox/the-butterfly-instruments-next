@@ -1,0 +1,24 @@
+{
+  "name": "The Butterfly Instruments",
+  "description": "A freelance software development agency. Senior engineers, direct communication, production-ready code.",
+  "category": "Software Development Agency",
+  "locale": "en_US",
+  "themeColor": "#131313",
+  "keywords": [
+    "software development agency",
+    "senior software engineers",
+    "web application development",
+    "mobile app development",
+    "backend systems",
+    "cloud and devops",
+    "technical consulting",
+    "product engineering"
+  ],
+  "socialImage": {
+    "alt": "The Butterfly Instruments social preview",
+    "width": 1200,
+    "height": 630,
+    "type": "image/svg+xml"
+  },
+  "requestFramePermissions": []
+}
